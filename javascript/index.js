@@ -38,6 +38,121 @@ var buttonReset = document.getElementById('reset');
 
 //                SELETOR DE FILES E RANKS                //
 
+function addLetters() {
+    if (a.selected) {
+        letters[0] = 'a';
+    }
+    else if (!a.selected) {
+        letters[0] = '';
+    }
+    
+    if (b.selected) {
+        letters[1] = 'b';
+    }
+    else if (!b.selected) {
+        letters[1] = '';
+    }
+    
+    if (c.selected) {
+        letters[2] = 'c';
+    }
+    else if (!c.selected) {
+        letters[2] = '';
+    }
+    
+    if (d.selected) {
+        letters[3] = 'd';
+    }
+    else if (!d.selected) {
+        letters[3] = '';
+    }
+    
+    if (e.selected) {
+        letters[4] = 'e';
+    }
+    else if (!e.selected) {
+        letters[4] = '';
+    }
+    
+    if (f.selected) {
+        letters[5] = 'f';
+    }
+    else if (!f.selected) {
+        letters[5] = '';
+    }
+    
+    if (g.selected) {
+        letters[6] = 'g';
+    }
+    else if (!g.selected) {
+        letters[6] = '';
+    }
+    
+    if (h.selected) {
+        letters[7] = 'h';
+    }
+    else if (!h.selected) {
+        letters[7] = '';
+    }
+}
+
+function addNumbers() {
+    if (n1.selected) {
+        numbers[0] = '1';
+    }
+    else if (!n1.selected) {
+        numbers[0] = '';
+    }
+    
+    if (n2.selected) {
+        numbers[1] = '2';
+    }
+    else if (!n2.selected) {
+        numbers[1] = '';
+    }
+    
+    if (n3.selected) {
+        numbers[2] = '3';
+    }
+    else if (!n3.selected) {
+        numbers[2] = '';
+    }
+    
+    if (n4.selected) {
+        numbers[3] = '4';
+    }
+    else if (!n4.selected) {
+        numbers[3] = '';
+    }
+    
+    if (n5.selected) {
+        numbers[4] = '5';
+    }
+    else if (!n5.selected) {
+        numbers[4] = '';
+    }
+    
+    if (n6.selected) {
+        numbers[5] = '6';
+    }
+    else if (!n6.selected) {
+        numbers[5] = '';
+    }
+    
+    if (n7.selected) {
+        numbers[6] = '7';
+    }
+    else if (!n7.selected) {
+        numbers[6] = '';
+    }
+    
+    if (n8.selected) {
+        numbers[7] = '8';
+    }
+    else if (!n8.selected) {
+        numbers[7] = '';
+    }
+}
 
 function allLetters() {
     a.selected = true;
@@ -48,10 +163,11 @@ function allLetters() {
     f.selected = true;
     g.selected = true;
     h.selected = true;
+    addLetters();
 }
 
 function clearLetters() {
-    a.selected = false;
+    a.selected = true;
     b.selected = false;
     c.selected = false;
     d.selected = false;
@@ -59,6 +175,7 @@ function clearLetters() {
     f.selected = false;
     g.selected = false;
     h.selected = false;
+    addLetters();
 }
 
 function allNumbers() {
@@ -70,10 +187,11 @@ function allNumbers() {
     n6.selected = true;
     n7.selected = true;
     n8.selected = true;
+    addNumbers();
 }
 
 function clearNumbers() {
-    n1.selected = false;
+    n1.selected = true;
     n2.selected = false;
     n3.selected = false;
     n4.selected = false;
@@ -81,122 +199,7 @@ function clearNumbers() {
     n6.selected = false;
     n7.selected = false;
     n8.selected = false;
-}
-
-function addLetters() {
-    if (a.checked) {
-        letters[0] = 'a';
-    }
-    else if (!a.checked) {
-        letters[0] = '';
-    }
-    
-    if (b.checked) {
-        letters[1] = 'b';
-    }
-    else if (!b.checked) {
-        letters[1] = '';
-    }
-    
-    if (c.checked) {
-        letters[2] = 'c';
-    }
-    else if (!c.checked) {
-        letters[2] = '';
-    }
-    
-    if (d.checked) {
-        letters[3] = 'd';
-    }
-    else if (!d.checked) {
-        letters[3] = '';
-    }
-    
-    if (e.checked) {
-        letters[4] = 'e';
-    }
-    else if (!e.checked) {
-        letters[4] = '';
-    }
-    
-    if (f.checked) {
-        letters[5] = 'f';
-    }
-    else if (!f.checked) {
-        letters[5] = '';
-    }
-    
-    if (g.checked) {
-        letters[6] = 'g';
-    }
-    else if (!g.checked) {
-        letters[6] = '';
-    }
-    
-    if (h.checked) {
-        letters[7] = 'h';
-    }
-    else if (!h.checked) {
-        letters[7] = '';
-    }
-}
-
-function addNumbers() {
-    if (n1.checked) {
-        numbers[0] = '1';
-    }
-    else if (!n1.checked) {
-        numbers[0] = '';
-    }
-    
-    if (n2.checked) {
-        numbers[1] = '2';
-    }
-    else if (!n2.checked) {
-        numbers[1] = '';
-    }
-    
-    if (n3.checked) {
-        numbers[2] = '3';
-    }
-    else if (!n3.checked) {
-        numbers[2] = '';
-    }
-    
-    if (n4.checked) {
-        numbers[3] = '4';
-    }
-    else if (!n4.checked) {
-        numbers[3] = '';
-    }
-    
-    if (n5.checked) {
-        numbers[4] = '5';
-    }
-    else if (!n5.checked) {
-        numbers[4] = '';
-    }
-    
-    if (n6.checked) {
-        numbers[5] = '6';
-    }
-    else if (!n6.checked) {
-        numbers[5] = '';
-    }
-    
-    if (n7.checked) {
-        numbers[6] = '7';
-    }
-    else if (!n7.checked) {
-        numbers[6] = '';
-    }
-    
-    if (n8.checked) {
-        numbers[7] = '8';
-    }
-    else if (!n8.checked) {
-        numbers[7] = '';
-    }
+    addNumbers();
 }
 
 
@@ -204,7 +207,7 @@ function addNumbers() {
 
 
 function generateBoardWhite() {
-    var cont = 0;
+    let cont = 0;
     for (let i = 7; i >= 0; i--) {
         for (let j = 0; j < 8; j++) {
             if (cont % 2 == 0) {
@@ -223,7 +226,7 @@ function generateBoardWhite() {
 }
 
 function generateBoardBlack() {
-    var cont = 0;
+    let cont = 0;
     for (let i = 0; i < 8; i++) {
         for (let j = 7; j >= 0; j--) {
             if (cont % 2 == 0) {
@@ -305,7 +308,9 @@ function selectNotation() {
 
 function selectHandicap() {
     if (handicaps.selectedIndex == 1) {
-        document.getElementById(square).classList.add("squareOn");
+        if (randomSquareText.innerHTML != '') {
+            document.getElementById(square).classList.add("squareOn");
+        }
     }
     else if (handicaps.selectedIndex == 0){
         document.getElementById(square).classList.remove("squareOn");
@@ -330,87 +335,142 @@ function selectTime() {
 }
 
 
-// //                  GERADOR DE CASA ALEATÓRIO               //
 
-// var newNotation;
+//                  VERIFICADOR DE QUANTIDADE               //
 
-// function generateRandomSquare() {
-//     var previousNotation = document.querySelector("#random_number p").innerHTML;
-//     var boolean_equals = true;
-//     let cont = 0;
-//     while (boolean_equals) {
-//         generate();
-//         if (newNotation == previousNotation) {
-//             generate();
-//             cont++;
-//             if (cont == 10) {
-//                 break;
-//             }
-//         }
-//         else {
-//             boolean_equals = false;
-//         }
-//     }
-// }
 
-// function generate() {    
-//     if ((a.selected == true || b.selected == true || c.selected == true || d.selected == true || e.selected == true ||
-//         f.selected == true || g.selected == true || h.selected == true ) && (n1.selected == true || n2.selected == true ||
-//             n3.selected == true || n4.selected == true || n5.selected == true || n6.selected == true || n7.selected == true ||
-//              n8.selected == true )) {
-//         addLetters();
-//         addNumbers();
+function checkOneLetter() {
+    addLetters();
+    addNumbers();
+
+    let cont = 0;
+
+    for (let i = 0; i < 8; i++) {
+        if (letters[i] !== '') {
+            cont += 1;
+        }
+    }
+    
+    if (cont == 1) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+}
+
+function checkOneNumber() {
+    addLetters();
+    addNumbers();
+
+    let cont = 0;
+
+    for (let i = 0; i < 8; i++) {
+        if (numbers[i] !== '') {
+            cont += 1;
+        }
+    }
+
+    if (cont == 1) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+//                  GERADOR DE CASA ALEATÓRIO               //
+
+var newNotation;
+
+function generateRandomSquare() {
+    let previousNotation = randomSquareText.innerHTML;
+    let boolean_equals = true;
+    let cont = 0;
+    while (boolean_equals) {
+        generate();
+        if (newNotation == previousNotation) {
+            generate();
+            cont++;
+            if (cont == 10) {
+                break;
+            }
+        }
+        else {
+            boolean_equals = false;
+        }
+    }
+}
+
+function generate() {    
+    if ((a.selected == true || b.selected == true || c.selected == true || d.selected == true || e.selected == true ||
+        f.selected == true || g.selected == true || h.selected == true ) && (n1.selected == true || n2.selected == true ||
+            n3.selected == true || n4.selected == true || n5.selected == true || n6.selected == true || n7.selected == true ||
+             n8.selected == true )) {
+        addLetters();
+        addNumbers();
         
-//         let boolean_letters = true;
-//         let boolean_numbers = true;        
+        let boolean_letters = true;
+        let boolean_numbers = true;        
         
-//         let randomLetter;
-//         let randomNumber;
+        let randomLetter = Math.round(Math.random() * 7);
+        let randomNumber = Math.round(Math.random() * 7);; 
         
-//         randomLetter = Math.round(Math.random() * 7);
-        
-//         while (boolean_letters) {
-//             if (letters[randomLetter] == '') {
-//                 randomLetter = Math.round(Math.random() * 7);
-//             }
-//             else {
-//                 boolean_letters = false;
-//             }
-//         }
-        
-        
-//         randomNumber = Math.round(Math.random() * 7);
+        while (boolean_letters) {
+            if (letters[randomLetter] == '') {
+                randomLetter = Math.round(Math.random() * 7);
+            }
+            else {
+                boolean_letters = false;
+            }
+        }
             
-//         while (boolean_numbers) {
-//             if (numbers[randomNumber] == '') {
-//                 randomNumber = Math.round(Math.random() * 7);
-//             }
-//             else {
-//                 boolean_numbers = false;
-//             }
-//         }
-//         square = letters[randomLetter] + numbers[randomNumber];
+        while (boolean_numbers) {
+            if (numbers[randomNumber] == '') {
+                randomNumber = Math.round(Math.random() * 7);
+            }
+            else {
+                boolean_numbers = false;
+            }
+        }
+
+        square = letters[randomLetter] + numbers[randomNumber];
 
         
-//         newNotation = square;
-//         if (handicaps.selectedIndex == 1) {
-//             document.getElementById(square).classList.add("squareOn");
-//         }
-//         randomSquare = square;
-//         randomSquareText.innerHTML = square;
-//         overBoard.innerHTML = square;
-//         previousNotation = newNotation;
+        newNotation = square;
+        randomSquare = square;
+        randomSquareText.innerHTML = square;
+        overBoard.innerHTML = square;
+        previousNotation = newNotation;
+        if (handicaps.selectedIndex == 1) {
+            if (randomSquareText.innerHTML != '') {
+                document.getElementById(square).classList.add("squareOn");
+            }
+        }
         
-//     }
-// }
+    }
+}
 
 //                  GERADOR DE CASAS                    //
 
-
-
+// function generateRandomSquare() {
+//     let randomLetter = Math.round(Math.random() * 7);
+//     let randomNumber = Math.round(Math.random() * 7);
+//     square = letters[randomLetter] + numbers[randomNumber];
+//     if (handicaps.selectedIndex == 1) {
+//         document.getElementById(square).classList.add("squareOn");
+//     }
+//     randomSquare = square;
+//     randomSquareText.innerHTML = square;
+//     overBoard.innerHTML = square;
+// }
 
 function deleteRandomSquare() {
-    document.getElementById(randomSquare).classList.remove("squareOn");
+    if (document.getElementById(clickedSquare).classList.contains("squareOn")) {
+        document.getElementById(square).classList.remove("squareOn");
+    }
 }
 
 function updateSquare() {
@@ -420,7 +480,7 @@ function updateSquare() {
 
 function divClick(clicked) {
     clickedSquare = clicked;
-    if (clicked == randomSquare) {
+    if (clicked == square) {
         gotit++;
     } 
     else {
@@ -475,14 +535,18 @@ function start() {
     if (colors.selectedIndex == 0) {
         for (let i = 7; i >= 0; i--) {
             for (let j = 0; j < 8; j++) {
+                if (letters[j] != '' && numbers[i] != ''){
                     document.querySelector("#" + letters[j] + numbers[i]).setAttribute("onmousedown",  "divClick('" + letters[j] + numbers[i] + "')");
+                }
             }
         }
     }
     else if (colors.selectedIndex == 1) {
         for (let i = 0; i < 8; i++) {
             for (let j = 7; j >= 0; j--) {
+                if (letters[j] != '' && numbers[i] != ''){
                     document.querySelector("#" + letters[j] + numbers[i]).setAttribute("onmousedown",  "divClick('" + letters[j] + numbers[i] + "')");
+                }
             }
         }        
     }
@@ -491,18 +555,26 @@ function start() {
 
 function stop() {
     clearInterval(Interval);
-    document.getElementById(square).classList.remove("squareOn");
+    if (handicaps.selectedIndex == 1) {
+        if (randomSquareText.innerHTML != '') {
+            document.getElementById(square).classList.remove("squareOn");            
+        }
+    }
     if (colors.selectedIndex == 0) {
         for (let i = 7; i >= 0; i--) {
             for (let j = 0; j < 8; j++) {
+                if (letters[j] != '' && numbers[i] != ''){
                     document.querySelector("#" + letters[j] + numbers[i]).removeAttribute("onmousedown",  "divClick('" + letters[j] + numbers[i] + "')");
+                }
             }
         }
     }
     else if (colors.selectedIndex == 1) {
         for (let i = 0; i < 8; i++) {
             for (let j = 7; j >= 0; j--) {
+                if (letters[j] != '' && numbers[i] != ''){
                     document.querySelector("#" + letters[j] + numbers[i]).removeAttribute("onmousedown",  "divClick('" + letters[j] + numbers[i] + "')");
+                }
             }
         }        
     }
@@ -527,51 +599,5 @@ function resetTimer() {
 }
 
 selectColor();
-
-
-//                  VERIFICADOR DE QUANTIDADE               //
-
-
-function checkOneLetter() {
-    addLetters();
-    addNumbers();
-
-    let cont = 0;
-
-    for (let i = 0; i < 8; i++) {
-        if (letters[i] !== '') {
-            cont += 1;
-        }
-    }
-    
-    if (cont == 1) {
-        return true;
-    }
-    else {
-        return false;
-    }
-
-}
-
-function checkOneNumber() {
-    addLetters();
-    addNumbers();
-
-    let cont = 0;
-
-    for (let i = 0; i < 8; i++) {
-        if (numbers[i] !== '') {
-            cont += 1;
-        }
-    }
-
-    if (cont == 1) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
 allLetters();
 allNumbers();
