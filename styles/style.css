@@ -23,26 +23,29 @@ body {
 }
 
 #left_board p {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-#left_board span {
     background: var(--on-color);
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 10%;
+}
+
+#left_board span {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     color: var(--dark-color);
-    height: 3em;
-    font-size: 2em;
+    font-size: 4vh;
+    text-align: center;
+    /* background: red; */
 }
 
 #board {
     height: 95%;
+    max-width: 50%;
     aspect-ratio: 1;
     display: grid;
     grid-template-columns: repeat(8, 12.5%);
@@ -79,17 +82,18 @@ body {
 
 #score {
      width: 20vw;
+     height: 50%;
      display: flex;
      flex-direction: row;
      align-items: center;
      justify-content: space-evenly;
-     font-size: 2em;
+     font-size: 3.5vh;
      background: var(--dark-color);
 }
 
 #scoreboard, #left_board {
     background: var(--light-color);
-    height: 95vh;
+    height: 95%;
     width: 20%;
     border-radius: 1em;
     display: flex;
@@ -108,14 +112,15 @@ body {
 } */
 
 #random-square {
-    height: 35%;
+    height: 41%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1em;
     background: var(--dark-color);
-    font-size: 5em;
+    /* background: red; */
+    font-size: 5vh;
 }
 
 #board div span {
@@ -126,7 +131,7 @@ body {
 #over_board {
     display: flex;
     position: absolute;
-    font-size: 8em;
+    font-size: 15vh;
     color: var(--on-color);
     caret-color: transparent;
     pointer-events: none;
@@ -138,7 +143,7 @@ body {
     margin: .5em;
     padding: .2em;
     padding-left: .75em;
-    font-size: 1em;
+    font-size: 2vh;
     background: var(--on-color);
     border-radius: .5em;
     color: var(--dark-color);
@@ -147,7 +152,7 @@ body {
 
 #color_label, #notation_label, #handicap_label, #time_label{
     margin-top: .5em;
-    font-size: 1.5em;
+    font-size: 3vh;
 }
 
 #color_label {
@@ -156,20 +161,20 @@ body {
 
 #time_block {
     background-color: var(--on-color);
-    height: 3em;
+    height: 50%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: 4vh;
     color: var(--dark-color);
 }
 
 #start, #stop, #reset {
-    height: 2.4em;
+    height: 6vh;
     width: 90%;
     border-radius: .5em;
-    font-size: 1.5em;
+    font-size: 3vh;
     background: var(--on-color);
     color: var(--dark-color);
 }
@@ -184,7 +189,7 @@ body {
 }
 
 #buttons {
-    /* background: red; */
+    background: var(--menu-color);
     height: 30%;
     width: 100%;
     display: flex;
@@ -195,5 +200,5 @@ body {
 
 #top_score {
     /* background-color: red; */
-    height: 24%;
+    height: 21%;
 }
