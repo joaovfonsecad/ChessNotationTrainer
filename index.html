@@ -15,28 +15,59 @@
         <div id="left_board">
             <p><span>MENU</span></p>
             <label for="color" id="color_label">Color</label>
-            <select name="color" id="colors" onmouseup="selectColor()">
+            <select name="color" id="colors" onchange="selectColor()">
                 <option value="white">White</option>
                 <option value="black">Black</option>
             </select>
             <label for="notation" id="notation_label">Notation Style</label>
-            <select name="notation" id="notations" onmouseup="selectNotation()">
+            <select name="notation" id="notations" onchange="selectNotation()">
                 <option value="notation_none">No notation</option>
                 <option value="notation_inside_squares">Notation inside the squares</option>
                 <!-- <option value="notation_inside_board">Notation insde the board</option> -->
             </select>
             <label for="Handicap" id="handicap_label">Handicap</label>
-            <select name="Handicap" id="handicaps" onmouseup="selectHandicap()">
+            <select name="Handicap" id="handicaps" onchange="selectHandicap()">
                 <option value="handicap_on">No handicap</option>
                 <option value="handicap_off">Handicap on</option>
             </select>
             <label for="time" id="time_label">Time</label>
-            <select name="time" id="times" onmouseup="selectTime()">
+            <select name="time" id="times" onchange="selectTime()">
                 <option value="time_none">No time</option>
                 <option value="time_30s">30s</option>
                 <option value="time_60s">60s</option>
                 <option value="time_90s">90s</option>
             </select>
+            <label for="custom_board" id="custom_board_label">Customize board</label>
+            <div id="custom_board_wrapper">
+                <select name="custom_board" id="custom_letters" multiple="multiple" onchange="selectTime()">
+                    <option value="a" id="a">a</option>
+                    <option value="b" id="b">b</option>
+                    <option value="c" id="c">c</option>
+                    <option value="d" id="d">d</option>
+                    <option value="e" id="e">e</option>
+                    <option value="f" id="f">f</option>
+                    <option value="g" id="g">g</option>
+                    <option value="h" id="h">h</option>
+                </select>
+                <select name="custom_board" id="custom_numbers" multiple="multiple" onchange="selectTime()">
+                    <option value="n1" id="n1">1</option>
+                    <option value="n2" id="n2">2</option>
+                    <option value="n3" id="n3">3</option>
+                    <option value="n4" id="n4">4</option>
+                    <option value="n5" id="n5">5</option>
+                    <option value="n6" id="n6">6</option>
+                    <option value="n7" id="n7">7</option>
+                    <option value="n8" id="n8">8</option>
+                </select>
+            </div>
+            <div id="custom_buttons">
+                <div id="custom_buttons_left">
+                    
+                </div>
+                <div id="custom_buttons_right">
+
+                </div>
+            </div>
         </div>
         <div id="board">
             

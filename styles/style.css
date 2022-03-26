@@ -60,7 +60,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 3.5vh;
     caret-color: transparent;
 }
 
@@ -150,13 +150,13 @@ body {
     font-weight: 550;
 }
 
-#color_label, #notation_label, #handicap_label, #time_label{
-    margin-top: .5em;
+#color_label, #notation_label, #handicap_label, #time_label, #custom_board_label{
+    margin-top: 1vh;
     font-size: 3vh;
 }
 
 #color_label {
-    margin-top: 1em;
+    margin-top: 1.5vh;
 }
 
 #time_block {
@@ -201,4 +201,25 @@ body {
 #top_score {
     /* background-color: red; */
     height: 21%;
+}
+
+#custom_board_wrapper {
+    margin-top: 1.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background: red; */
+    width: 85%;
+    height: 25%;
+}
+
+#custom_letters, #custom_numbers {
+    width: 40%;
+    font-size: 2vh;
+    padding: 1em;
+    text-align: center;
+    overflow: hidden;
+    border: none;
+    background: var(--on-color);
+    border-radius: .5em;
 }
