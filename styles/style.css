@@ -223,3 +223,26 @@ body {
     background: var(--on-color);
     border-radius: .5em;
 }
+
+#custom_buttons {
+    width: 85%;
+    /* background: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#custom_buttons_left, #custom_buttons_right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.custom_button_class {
+    margin-top: 1.5vh;
+    font-size: 2vh;
+    color: var(--dark-color);
+    background: var(--on-color);
+    border-radius: .5em;
+}
