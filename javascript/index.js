@@ -206,48 +206,6 @@ function clearNumbers() {
 //                  GERADORES DA BOARD                  //
 
 
-function generateBoardWhite() {
-    let cont = 0;
-    for (let i = 7; i >= 0; i--) {
-        for (let j = 0; j < 8; j++) {
-            if (cont % 2 == 0) {
-                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "dark_color"></div>';
-                page.innerHTML += '<div id= "' + letters[j] + numbers[i] + '" class= "dark_color"></div>';
-            }
-            else {
-                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "light_color"></div>';
-                page.innerHTML += '<div id= "' + letters[j] + numbers[i] + '" class= "light_color"></div>';
-            }
-            cont++;
-            // page.innerHTML += '<div></div>'
-        }
-        cont++;
-    }
-}
-
-function generateBoardBlack() {
-    let cont = 0;
-    for (let i = 0; i < 8; i++) {
-        for (let j = 7; j >= 0; j--) {
-            if (cont % 2 == 0) {
-                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "dark_color"></div>';
-                board.innerHTML += '<div id= "' + letters[j] + numbers[i] + '" class= "dark_color"></div>';
-            }
-            else {
-                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "light_color"></div>';
-                board.innerHTML += '<div id= "' + letters[j] + numbers[i] + '" class= "light_color"><span>';
-            }
-            cont++;
-            // page.innerHTML += '<div></div>'
-        }
-        cont++;
-    }
-}
-
-
-//                  SELETORES MENU                      //
-
-
 function selectColor() {
     if(notations.selectedIndex == 0) {
         board.innerHTML = '';
@@ -271,37 +229,67 @@ function selectColor() {
     }
 }
 
-function selectNotation() {
-    if (notations.selectedIndex == 0){
-        if (colors.selectedIndex == 0) {
-            for (let i = 7; i >= 0; i--) {
-                for (let j = 0; j < 8; j++) {
-                        document.querySelector("#" + letters[j] + numbers[i]).innerHTML = '';
-                }
+function generateBoardWhite() {
+    let lettersTemp = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    let numbersTemp = ['1', '2', '3', '4', '5', '6', '7', '8'];
+    let cont = 0;
+    for (let i = 7; i >= 0; i--) {
+        for (let j = 0; j < 8; j++) {
+            if (cont % 2 != 0) {
+                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "dark_color"></div>';
+                page.innerHTML += '<div id= "' + lettersTemp[j] + numbersTemp[i] + '" class= "dark_color"></div>';
             }
+            else {
+                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "light_color"></div>';
+                page.innerHTML += '<div id= "' + lettersTemp[j] + numbersTemp[i] + '" class= "light_color"></div>';
+            }
+            cont++;
+            // page.innerHTML += '<div></div>'
         }
-        else if (colors.selectedIndex == 1) {
-            for (let i = 0; i < 8; i++) {
-                for (let j = 7; j >= 0; j--) {
-                        document.querySelector("#" + letters[j] + numbers[i]).innerHTML = '';
-                }
-            }        
+        cont++;
+    }
+}
+
+function generateBoardBlack() {
+    let lettersTemp = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    let numbersTemp = ['1', '2', '3', '4', '5', '6', '7', '8'];
+    let cont = 0;
+    for (let i = 0; i < 8; i++) {
+        for (let j = 7; j >= 0; j--) {
+            if (cont % 2 != 0) {
+                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "dark_color"></div>';
+                board.innerHTML += '<div id= "' + lettersTemp[j] + numbersTemp[i] + '" class= "dark_color"></div>';
+            }
+            else {
+                // page.innerHTML += '<div id= "' + letters[i] + numbers[j] + '" class= "light_color"></div>';
+                board.innerHTML += '<div id= "' + lettersTemp[j] + numbersTemp[i] + '" class= "light_color"><span>';
+            }
+            cont++;
+            // page.innerHTML += '<div></div>'
+        }
+        cont++;
+    }
+}
+
+
+//                  SELETORES MENU                      //
+
+
+function selectNotation() {
+    let lettersTemp = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    let numbersTemp = ['1', '2', '3', '4', '5', '6', '7', '8'];
+    if (notations.selectedIndex == 0){
+        for (let i = 7; i >= 0; i--) {
+            for (let j = 0; j < 8; j++) {
+                    document.querySelector("#" + lettersTemp[j] + numbersTemp[i]).innerHTML = '';
+            }
         }
     }
     else if (notations.selectedIndex == 1){
-        if (colors.selectedIndex == 0) {
-            for (let i = 7; i >= 0; i--) {
-                for (let j = 0; j < 8; j++) {
-                        document.querySelector("#" + letters[j] + numbers[i]).innerHTML = '<span>' + letters[j] + numbers[i] + '</span>';
-                }
+        for (let i = 7; i >= 0; i--) {
+            for (let j = 0; j < 8; j++) {
+                    document.querySelector("#" + lettersTemp[j] + numbersTemp[i]).innerHTML = '<span>' + lettersTemp[j] + numbersTemp[i] + '</span>';
             }
-        }
-        else if (colors.selectedIndex == 1) {
-            for (let i = 0; i < 8; i++) {
-                for (let j = 7; j >= 0; j--) {
-                        document.querySelector("#" + letters[j] + numbers[i]).innerHTML = '<span>' + letters[j] + numbers[i] + '</span>';
-                }
-            }        
         }
     }
 }
@@ -335,53 +323,8 @@ function selectTime() {
 }
 
 
-
-//                  VERIFICADOR DE QUANTIDADE               //
-
-
-function checkOneLetter() {
-    addLetters();
-    addNumbers();
-
-    let cont = 0;
-
-    for (let i = 0; i < 8; i++) {
-        if (letters[i] !== '') {
-            cont += 1;
-        }
-    }
-    
-    if (cont == 1) {
-        return true;
-    }
-    else {
-        return false;
-    }
-
-}
-
-function checkOneNumber() {
-    addLetters();
-    addNumbers();
-
-    let cont = 0;
-
-    for (let i = 0; i < 8; i++) {
-        if (numbers[i] !== '') {
-            cont += 1;
-        }
-    }
-
-    if (cont == 1) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-
 //                  GERADOR DE CASA ALEATÓRIO               //
+
 
 var newNotation;
 
@@ -402,6 +345,11 @@ function generateRandomSquare() {
             boolean_equals = false;
         }
     }
+    if (handicaps.selectedIndex == 1) {
+        if (randomSquareText.innerHTML != '') {
+            document.getElementById(square).classList.add("squareOn");
+        }
+    }
 }
 
 function generate() {    
@@ -409,14 +357,15 @@ function generate() {
         f.selected == true || g.selected == true || h.selected == true ) && (n1.selected == true || n2.selected == true ||
             n3.selected == true || n4.selected == true || n5.selected == true || n6.selected == true || n7.selected == true ||
              n8.selected == true )) {
-        addLetters();
-        addNumbers();
+
+            addLetters();
+            addNumbers();
         
         let boolean_letters = true;
         let boolean_numbers = true;        
         
         let randomLetter = Math.round(Math.random() * 7);
-        let randomNumber = Math.round(Math.random() * 7);; 
+        let randomNumber = Math.round(Math.random() * 7);
         
         while (boolean_letters) {
             if (letters[randomLetter] == '') {
@@ -444,12 +393,6 @@ function generate() {
         randomSquareText.innerHTML = square;
         overBoard.innerHTML = square;
         previousNotation = newNotation;
-        if (handicaps.selectedIndex == 1) {
-            if (randomSquareText.innerHTML != '') {
-                document.getElementById(square).classList.add("squareOn");
-            }
-        }
-        
     }
 }
 
@@ -468,8 +411,14 @@ function generate() {
 // }
 
 function deleteRandomSquare() {
-    if (document.getElementById(clickedSquare).classList.contains("squareOn")) {
-        document.getElementById(square).classList.remove("squareOn");
+    let lettersTemp = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    let numbersTemp = ['1', '2', '3', '4', '5', '6', '7', '8'];
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+            if (document.getElementById(lettersTemp[i] + numbersTemp[j]).classList.contains('squareOn')) {
+                document.getElementById(lettersTemp[i] + numbersTemp[j]).classList.remove('squareOn');
+            }
+        }
     }
 }
 
