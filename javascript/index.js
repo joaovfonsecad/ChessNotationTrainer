@@ -297,11 +297,29 @@ function selectNotation() {
 function selectHandicap() {
     if (handicaps.selectedIndex == 1) {
         if (randomSquareText.innerHTML != '') {
-            document.getElementById(square).classList.add("squareOn");
+            for (let i = 0; i < 8; i++) {
+                document.getElementById(square.charAt(0) + numbers[i]).classList.add("squareOn");
+            }
+        }
+    }
+    else if (handicaps.selectedIndex == 2) {
+        if (randomSquareText.innerHTML != '') {
+            for (let i = 0; i < 8; i++) {
+                document.getElementById(letters[i] + square.charAt(1)).classList.add("squareOn");
+            }
         }
     }
     else if (handicaps.selectedIndex == 0){
-        document.getElementById(square).classList.remove("squareOn");
+        for (let i = 0; i < 8; i++) {
+            if(document.getElementById(square.charAt(0) + numbers[i]).classList.contains("squareOn")) {
+                document.getElementById(square.charAt(0) + numbers[i]).classList.remove("squareOn");
+            }
+        }
+        for (let i = 0; i < 8; i++) {
+            if(document.getElementById(square.charAt(0) + numbers[i]).classList.contains("squareOn")) {
+                document.getElementById(letters[i] + square.charAt(1)).classList.remove("squareOn");
+            }
+        }
     }
 }
 
@@ -347,7 +365,16 @@ function generateRandomSquare() {
     }
     if (handicaps.selectedIndex == 1) {
         if (randomSquareText.innerHTML != '') {
-            document.getElementById(square).classList.add("squareOn");
+            for (let i = 0; i < 8; i++) {
+                document.getElementById(square.charAt(0) + numbers[i]).classList.add("squareOn");
+            }
+        }
+    }
+    else if (handicaps.selectedIndex == 2) {
+        if (randomSquareText.innerHTML != '') {
+            for (let i = 0; i < 8; i++) {
+                document.getElementById(letters[i] + square.charAt(1)).classList.add("squareOn");
+            }
         }
     }
 }
@@ -472,11 +499,17 @@ function startTimer () {
 }
 
 function start() {
+    startButton.classList.add("start_on");
+    document.getElementById("custom_board_wrapper").classList.add("start_on");
+    document.getElementById("custom_numbers").classList.add("start_on");
+    document.getElementById("custom_letters").classList.add("start_on");
+    for (let i = 0; i < 4; i++) {
+        document.querySelectorAll(".custom_button_class")[i].classList.add("start_on");
+    }
     if (time.innerHTML == '00') {
         resetTimer();
     }
     if (times.selectedIndex != 0) {
-        startButton.classList.add("start_on");
         clearInterval(Interval);
         Interval = setInterval(startTimer, 1000);
         startTimer();
@@ -504,11 +537,7 @@ function start() {
 
 function stop() {
     clearInterval(Interval);
-    if (handicaps.selectedIndex == 1) {
-        if (randomSquareText.innerHTML != '') {
-            document.getElementById(square).classList.remove("squareOn");            
-        }
-    }
+    deleteRandomSquare();
     if (colors.selectedIndex == 0) {
         for (let i = 7; i >= 0; i--) {
             for (let j = 0; j < 8; j++) {
@@ -535,6 +564,12 @@ function stop() {
     } 
     square = null;
     startButton.classList.remove("start_on");
+    document.getElementById("custom_board_wrapper").classList.remove("start_on");
+    document.getElementById("custom_numbers").classList.remove("start_on");
+    document.getElementById("custom_letters").classList.remove("start_on");
+    for (let i = 0; i < 4; i++) {
+        document.querySelectorAll(".custom_button_class")[i].classList.remove("start_on");
+    }
 }
 
 function resetTimer() {

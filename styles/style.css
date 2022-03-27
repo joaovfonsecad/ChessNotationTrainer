@@ -179,9 +179,13 @@ body {
     color: var(--dark-color);
 }
 
+#start:hover, #stop:hover, #reset:hover {
+    cursor: pointer;
+}
+
 .start_on {
-    cursor: not-allowed;
-    pointer-events: none;
+    pointer-events:none;
+    opacity: 70%;
 }
 
 #stop, #reset {
