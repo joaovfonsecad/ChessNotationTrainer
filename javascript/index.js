@@ -582,6 +582,21 @@ function resetTimer() {
     clearScore();
 }
 
+function menuClose() {
+    document.getElementById("left_board").style.display = "none";
+}
+
+function menuOpen() {
+    if (document.getElementById("left_board").style.display == "flex") {
+        document.getElementById("left_board").style.display = "none";
+        document.getElementById("menu_blank_page").style.display = "none";
+    }
+    else {
+        document.getElementById("left_board").style.display = "flex";
+        document.getElementById("menu_blank_page").style.display = "flex";
+    }
+}
+
 selectColor();
 allLetters();
 allNumbers();

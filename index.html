@@ -9,6 +9,13 @@
 </head>
 <body>
     <div id="page">
+        <div id="menu_board">
+            <div id="menu_button" onclick="menuOpen()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
         <div id="over_board">
             <span></span>
         </div>
@@ -72,8 +79,17 @@
                 </div>
             </div>
         </div>
+        <div id="menu_blank_page" onclick="menuOpen()">
+
+        </div>
+        <div id="ghost_div">
+
+        </div>
         <div id="board">
             
+        </div>
+        <div id="ghost_div_bottom">
+
         </div>
         <div id="scoreboard">
             <div id="top_score">
@@ -87,6 +103,9 @@
             </div>
             <div id="random-square">
                 <span id="random-square-text"></span>
+            </div>
+            <div id="score_log">
+                
             </div>
             <div id="buttons">
                 <button id="start" onclick="start()">START</button>
