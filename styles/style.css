@@ -36,15 +36,18 @@ body {
 
 #over_board {
     /* background: red; */
-    width: 6vw;
+    width: 150px;
+    height: 150px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     font-size: 10vh;
     color: var(--overboard);
     caret-color: transparent;
     pointer-events: none;
     margin-left: 50%;
-    left: -3vw;
+    left: -75px;
 }
 
 #left_board, #scoreboard {
@@ -213,7 +216,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 3vh;
+    font-size: 30px;
     background: var(--boards-color);
     color: var(--on-color);
 }
@@ -272,6 +275,10 @@ body {
 
 #menu_blank_page {
     display: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #menu_board {
@@ -290,16 +297,42 @@ body {
     display: none;
 }
 
-@media only screen and (max-width: 1600px) {
+#score_ghost {
+    display: none;
+}
+
+@media only screen and (max-width: 1440px) {
     /* #page {
 
     } */
     /* board {
         margin-left: 7vw;
     } */
+    #top_score {
+        /* background: red; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #scoreboard {
+        width: 250px;
+        overflow: hidden;
+    }
+    #score {
+        width: 100%;
+    }
+    #time_block {
+        width: 100%;
+        margin: 0;
+    }
+    #over_board {
+        left: -152px;
+    }
     #ghost_div {
         display: flex;
-        width: 7vw;
+        width: 100px;
     }
     #left_board {
         display: none;
@@ -322,7 +355,7 @@ body {
     }    
     #menu_board  {
         height: 100vh;
-        width: 7vw;
+        width: 100px;
         margin-left: 0;
         background: var(--menu-div-color);
         position: absolute;
@@ -352,7 +385,10 @@ body {
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1024px) {
+    #over_board {
+        left: -160px;
+    }
     #board {
         width: 70%;
         max-height: 92%;
@@ -363,36 +399,37 @@ body {
         width: 8vw;
     }
     #ghost_div {
-        width: 10vw;
+        width: 100px;
+        height: 100vh;
     }
     #ghost_div_bottom {
         width: 2vw;
-        height: 100vh;
+        height: 12em;
         display: flex;
     }
 }
 
-@media only screen and (max-width: 900px) {
-    
+@media only screen and (max-width: 920px) {
+    #over_board {
+        display: none;
+    }
     #page {
         flex-direction: column;
     }
     #ghost_div {
         display: flex;
-        height: 10vh !important;
-        /* background: orange; */
+        height: 90px;
     }
     #left_board {
         display: none;
         margin: 0;
-        margin-top: 10%;
-        height: 90%;
+        margin-top: 90px;
+        height: 100vh;
         width: 100%;
         position: absolute;
         z-index: 10;
         flex-direction: column;
         overflow: scroll;
-        padding-bottom: 2em;
     }
     #board {
         width: 33em;
@@ -403,7 +440,7 @@ body {
     }
     #menu_board {
         width: 100vw;
-        height: 10vh;
+        height: 90px;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -418,14 +455,9 @@ body {
         width: 0;
         height: 0;
     }
-    #ghost_div {
-        display: flex;
-        height: 10em;
-        width: 100vw;
-    }
     #scoreboard {
         width: 100vw;
-        height: 12em;
+        height: 250px;
         flex-direction: row;
         background: var(--menu-div-color);
         align-items: center;
@@ -442,6 +474,7 @@ body {
     
     #time_block {
         background-color: var(--on-color);
+        flex-direction: column;
         height: 100%;
         width: 100%;
         display: flex;
@@ -452,7 +485,7 @@ body {
     }
     
     #score {
-        height: 10vh;
+        height: 90px;
         width: 60%;
         background-color: var(--menu-div-color);
         position: absolute;
@@ -488,7 +521,7 @@ body {
     }
 }
 
-@media only screen and (max-width:580px) {
+@media only screen and (max-width:540px) {
     #board {
         width: 98%;
     }
@@ -496,10 +529,48 @@ body {
         margin-left: 1.5em;
     }
     #score {
-        width: 60%;
+        width: 70%;
+        font-size: 20px;
+    }
+    #left_board {
+        height: 100vh;
     }
 }
 
-/* @media only screen and (max-width: 900px) {
-    
-} */
+@media only screen and (min-width: 750px) and (max-width: 920px) and (min-height: 1100px) and (max-height: 1400px) {
+    #board{
+        width: 96vw;
+    }
+    #scoreboard {
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) and (min-height: 750px) and (max-height: 1050px) {
+    #board{
+        width: 90vw;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 600px) and (min-height: 700px) and (max-height: 800px) {
+    #board{
+        width: 88vw;
+        height: auto;
+    }
+    #scoreboard {
+        height: 140px;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1100px) and (min-height: 550px) and (max-height: 650px) {
+    #board{
+        width: auto;
+        height: 98vh;
+        max-height: 96vh;
+    }
+    #scoreboard {
+        height: 100vh;
+    }
+}
+

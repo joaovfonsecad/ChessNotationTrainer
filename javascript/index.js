@@ -600,3 +600,21 @@ function menuOpen() {
 selectColor();
 allLetters();
 allNumbers();
+
+var invisDiv = window.matchMedia('(min-width: 1440px)');
+
+invisDiv.onchange = (e) => {
+    if (e.matches) {
+    document.getElementById("left_board").style.display = "flex";
+    document.getElementById("menu_blank_page").style.display = "none";
+  }
+  else {
+    document.getElementById("left_board").style.display = "none";
+  }
+}
+
+// if (mediaQuery.matches) {
+//   // Then trigger an alert
+//     document.getElementById("left_board").style.display = "flex";
+//     document.getElementById("menu_blank_page").style.display = "none";
+// }
