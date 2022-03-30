@@ -7,6 +7,7 @@
     --background-color: #2e362e;
     --on-color: #979797;
     --handicap: #BACC81;
+    --wrong-click: #cc8181;
     --boards-color: #444444;
     --board-color: #cccccc;
     --overboard: #BACC81;
@@ -299,6 +300,14 @@ body {
 
 #score_ghost {
     display: none;
+}
+
+.clickRight {
+    box-shadow: inset 0 0 1em .1em var(--handicap);
+}
+
+.clickWrong {
+    box-shadow: inset 0 0 1em .1em var(--wrong-click);
 }
 
 @media only screen and (max-width: 1440px) {

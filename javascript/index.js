@@ -454,17 +454,39 @@ function updateSquare() {
     wrong.innerHTML = missed;
 }
 
+var Interval2;
+var clickTime = 5;
+function squareClicked() {
+    clickTime--;
+    // console.log(clickTime);
+    if (clickTime == 0) {
+        clearInterval(Interval2);
+        if (document.getElementById(clickedSquare).classList.contains("clickRight")) {
+            document.getElementById(clickedSquare).classList.remove("clickRight");
+        }
+        else if (document.getElementById(clickedSquare).classList.contains("clickWrong")) {
+            document.getElementById(clickedSquare).classList.remove("clickWrong");
+        }
+    }
+}
+
 function divClick(clicked) {
+    clickTime = 5;
+    clearInterval(Interval2);
+    Interval2 = setInterval(squareClicked, 100);
     clickedSquare = clicked;
     if (clicked == square) {
+        document.getElementById(clicked).classList.add("clickRight");
         gotit++;
     } 
     else {
+        document.getElementById(clicked).classList.add("clickWrong");
         missed++;
     }
     updateSquare();
     deleteRandomSquare();
     generateRandomSquare();
+    squareClicked();
 }
 
 
