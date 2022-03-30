@@ -385,7 +385,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) and (min-height: 550px) {
     #over_board {
         left: -160px;
     }
@@ -396,7 +396,7 @@ body {
         aspect-ratio: 1;
     }
     #menu_board {
-        width: 8vw;
+        width: 100px;
     }
     #ghost_div {
         width: 100px;
@@ -409,7 +409,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 920px) and (min-height: 550px) {
     #over_board {
         display: none;
     }
@@ -572,5 +572,49 @@ body {
     #scoreboard {
         height: 100vh;
     }
+    #ghost_div {
+        width: 8vw;
+    }
 }
 
+@media only screen and (min-width: 370px) and (max-width: 380px) and (min-height: 660px) and (max-height: 680px) {
+    #ghost_div {
+        height: 95px;
+    }
+    #board {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 730px) and (min-height: 300px) and (max-height: 560px) {
+    #ghost_div {
+        height: 100vh;
+        width: 70px;
+    }
+    #menu_board {
+        width: 70px;
+    }
+    #board {
+        width: auto;
+        height: 95%;
+    }
+    #scoreboard {
+        width: 150px;
+    }
+    #score {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (width: 720px) and (height: 540px) {
+    #board {
+        height: 90%;
+    }
+}
+
+@media only screen and (width: 1024px) and (height: 768px) {
+    #board {
+        height: 85%;
+        width: auto;
+    }
+}
