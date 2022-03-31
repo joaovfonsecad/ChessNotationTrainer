@@ -379,6 +379,17 @@ function generateRandomSquare() {
     }
 }
 
+var Interval3;
+var clickTime2 = 5;
+function randomTime() {
+    clickTime2--;
+    // console.log(clickTime2);
+    if (clickTime2 == 0) {
+        clearInterval(Interval3);
+        overBoard.innerHTML = "";
+    }
+}
+
 function generate() {    
     if ((a.selected == true || b.selected == true || c.selected == true || d.selected == true || e.selected == true ||
         f.selected == true || g.selected == true || h.selected == true ) && (n1.selected == true || n2.selected == true ||
@@ -418,8 +429,11 @@ function generate() {
         newNotation = square;
         randomSquare = square;
         randomSquareText.innerHTML = square;
-        overBoard.innerHTML = square;
         previousNotation = newNotation;
+        overBoard.innerHTML = square;
+        clickTime2 = 5;
+        clearInterval(Interval3);
+        Interval3 = setInterval(randomTime, 150);
     }
 }
 
@@ -456,33 +470,49 @@ function updateSquare() {
 
 var Interval2;
 var clickTime = 5;
+var tempSquare;
 function squareClicked() {
     clickTime--;
     // console.log(clickTime);
     if (clickTime == 0) {
         clearInterval(Interval2);
-        if (document.getElementById(clickedSquare).classList.contains("clickRight")) {
-            document.getElementById(clickedSquare).classList.remove("clickRight");
+        if (document.getElementById(clickedSquare).classList.contains("click_right")) {
+            document.getElementById(clickedSquare).classList.remove("click_right");
         }
-        else if (document.getElementById(clickedSquare).classList.contains("clickWrong")) {
-            document.getElementById(clickedSquare).classList.remove("clickWrong");
+        else if (document.getElementById(clickedSquare).classList.contains("click_wrong")) {
+            document.getElementById(clickedSquare).classList.remove("click_wrong");
         }
     }
 }
 
 function divClick(clicked) {
+    if (clickTime != 0 && tempSquare != undefined) {
+        // console.log("clicktime != 0")
+        clearInterval(Interval2);
+        if (document.getElementById(tempSquare).classList.contains("click_right")) {
+            document.getElementById(tempSquare).classList.remove("click_right");
+            // console.log("click_right deleted");
+        }
+        else if (document.getElementById(tempSquare).classList.contains("click_wrong")) {
+            document.getElementById(tempSquare).classList.remove("click_wrong");
+            // console.log("click_wrong deleted");
+        }
+    }
     clickTime = 5;
     clearInterval(Interval2);
     Interval2 = setInterval(squareClicked, 100);
     clickedSquare = clicked;
     if (clicked == square) {
-        document.getElementById(clicked).classList.add("clickRight");
+        document.getElementById(clicked).classList.add("click_right");
+        document.getElementById("score_log").innerHTML += "<span class=\"click_right_score\">" + (square + ", ") + "</span>";
         gotit++;
     } 
     else {
-        document.getElementById(clicked).classList.add("clickWrong");
+        document.getElementById(clicked).classList.add("click_wrong");
+        document.getElementById("score_log").innerHTML += "<span class=\"click_wrong_score\">" + (square + ", ") + "</span>";
         missed++;
     }
+    tempSquare = clicked;
     updateSquare();
     deleteRandomSquare();
     generateRandomSquare();
@@ -600,6 +630,9 @@ function resetTimer() {
         clearInterval(Interval);
         seconds = tempTime;
         appendSeconds.innerHTML = seconds;
+    }
+    if (document.getElementById("score_log").innerHTML != '') {
+        document.getElementById("score_log").innerHTML = '';
     }
     clearScore();
 }

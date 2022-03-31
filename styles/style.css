@@ -236,10 +236,34 @@ body {
     border-bottom: 1px solid white;
 }
 
-#score_log {
-    /* background: red; */
+#score_log_wrapper {
+    /* background: blue; */
+    overflow: hidden;
+    color: var(--on-color);
+    padding-top: 10%;
+    padding-bottom: 10%;
     height: 50%;
+    width: 80%;
+    font-size: 1.4em;
+}
+
+#score_log {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
+    /* background: red; */
+}
+
+.click_wrong_score {
+    color: var(--wrong-click);
+    margin-right: .3em;
+    margin-top: .5em;
+}
+
+.click_right_score {
+    color: var(--handicap);
+    margin-right: .3em;
+    margin-top: .5em;
 }
 
 #buttons {
@@ -302,11 +326,11 @@ body {
     display: none;
 }
 
-.clickRight {
+.click_right {
     box-shadow: inset 0 0 1em .1em var(--handicap);
 }
 
-.clickWrong {
+.click_wrong {
     box-shadow: inset 0 0 1em .1em var(--wrong-click);
 }
 
@@ -420,7 +444,12 @@ body {
 
 @media only screen and (max-width: 920px) and (min-height: 550px) {
     #over_board {
-        display: none;
+        /* display: none; */
+        margin: 0;
+        margin-left: 50%;
+        margin-top: 50%;
+        top: 25px;
+        left: -75px;
     }
     #page {
         flex-direction: column;
