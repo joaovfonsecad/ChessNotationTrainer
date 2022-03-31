@@ -544,7 +544,7 @@ body {
 
     }
     
-    #score_log {
+    #score_log_wrapper {
         display: none;
     }
     
