@@ -504,12 +504,12 @@ function divClick(clicked) {
     clickedSquare = clicked;
     if (clicked == square) {
         document.getElementById(clicked).classList.add("click_right");
-        document.getElementById("score_log").innerHTML += "<span class=\"click_right_score\">" + (square + ", ") + "</span>";
+        document.getElementById("score_log").insertAdjacentHTML('afterbegin', "<span class=\"click_right_score\">" + (square + ", ") + "</span>");
         gotit++;
     } 
     else {
         document.getElementById(clicked).classList.add("click_wrong");
-        document.getElementById("score_log").innerHTML += "<span class=\"click_wrong_score\">" + (square + ", ") + "</span>";
+        document.getElementById("score_log").insertAdjacentHTML('afterbegin', "<span class=\"click_wrong_score\">" + (square + ", ") + "</span>");
         missed++;
     }
     tempSquare = clicked;
