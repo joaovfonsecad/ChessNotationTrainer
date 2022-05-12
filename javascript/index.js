@@ -673,3 +673,6 @@ invisDiv.onchange = (e) => {
 //     document.getElementById("left_board").style.display = "flex";
 //     document.getElementById("menu_blank_page").style.display = "none";
 // }
+
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`)
